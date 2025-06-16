@@ -29,10 +29,8 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t retail-mlops/app:latest .
-      - name: Install Trivy
-        run: |
-          wget https://github.com/aquasecurity/trivy/releases/download/v0.51.1/trivy_0.51.1_Linux-64bit.deb
-          sudo dpkg -i trivy_0.51.1_Linux-64bit.deb
+      - name: Trivy scan
+        uses: aquasecurity/trivy-action@master
         with:
           image-ref: retail-mlops/app:latest
           format: table
