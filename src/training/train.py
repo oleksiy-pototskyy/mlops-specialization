@@ -1,4 +1,3 @@
-"""Train a simple forecasting model."""
 from pathlib import Path
 
 MLFLOW_TRACKING_URI = Path(__file__).resolve().parents[2] / "mlruns"
@@ -8,7 +7,6 @@ MODEL_PATH = Path(__file__).resolve().parents[2] / "model.joblib"
 def main() -> None:
     import joblib
     import mlflow
-    import pandas as pd
     from sklearn.ensemble import RandomForestRegressor
     from sklearn.model_selection import train_test_split
     from sklearn.metrics import mean_absolute_error
@@ -21,7 +19,12 @@ def main() -> None:
     df = load_data()
     X = df[["store", "sku"]]
     y = df["sales"]
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X,
+        y,
+        test_size=0.2,
+        random_state=42,
+    )
 
     model = RandomForestRegressor(random_state=42)
     model.fit(X_train, y_train)
