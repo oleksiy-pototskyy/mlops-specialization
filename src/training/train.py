@@ -1,4 +1,3 @@
-"""Train a simple forecasting model."""
 from pathlib import Path
 
 MLFLOW_TRACKING_URI = Path(__file__).resolve().parents[2] / "mlruns"

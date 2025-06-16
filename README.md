@@ -1,6 +1,6 @@
-# Retail MLOps Reference Project
+# Retail MLOps Specialization Project
 
-This repository provides a lightweight but realistic end-to-end MLOps project used across the `MLOps Specialization` course.  It demonstrates data versioning, feature engineering, training, serving and infrastructure automation on Kubernetes.
+This repository provides a lightweight but realistic end-to-end MLOps project used across the `MLOps Specialization` course https://nubes.academy It demonstrates data versioning, feature engineering, training, serving and infrastructure automation on Kubernetes.
 
 ## Repository layout
 

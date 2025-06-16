@@ -14,3 +14,85 @@ model.joblib
 # Docker
 *.tar
 
+# IntellijIDEA
+.idea/
+*.iml
+
+# Eclipse files
+.classpath
+.project
+.settings/**
+
+# Vscode files
+.vscode
+
+# Emacs save files
+*~
+\#*\#
+.\#*
+
+# Vim-related files
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# JUnit test output from ginkgo e2e tests
+/junit*.xml
+
+# Mercurial files
+**/.hg
+**/.hg*
+
+
+.tags*
+
+/bazel-*
+*.pyc
+
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+
+# Exclude all .tfvars files, which are likely to contain sentitive data, such as
+# password, private keys, and other secrets. These should not be part of version
+# control as they are data points which are potentially sensitive and subject
+# to change depending on the environment.
+#
+*.tfvars
+
+# Ignore override files as they are usually used to override resources locally and so
+# are not checked in
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
+*tfplan*
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# Ignore terraform locks
+.terraform.lock.hcl
+
+# Ignore terragrunt cache
+.terragrunt-cache
+
+testing/
+
+# OSX trash
+.DS_Store
+
+### Helm ###
+# Chart dependencies
+**/charts/*.tgz
