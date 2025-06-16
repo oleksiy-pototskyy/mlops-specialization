@@ -1,0 +1,4 @@
+replicaCount: 1
+image:
+  repository: retail-mlops/app
+  tag: latest
