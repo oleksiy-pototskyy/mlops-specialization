@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          pip install -r src/requirements.txt
+      - name: Lint
+        run: |
+          pip install flake8
+          flake8 src
+      - name: Test
+        run: |
+          pip install pytest
+          pytest -q
+      - name: Build Docker image
+        run: |
+          docker build -t retail-mlops/app:latest .
+      - name: Trivy scan
+        uses: aquasecurity/trivy-action@v0.18.0
+        with:
+          image-ref: retail-mlops/app:latest
+          format: table
+          exit-code: 0
